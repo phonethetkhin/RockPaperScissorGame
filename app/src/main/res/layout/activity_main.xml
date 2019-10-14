@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#DFDCDC">
+
+
+    <ImageView
+        android:id="@+id/imgYourMove"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars[0]" />
+
+    <ImageView
+        android:id="@+id/imgComputerMove"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars[0]" />
+
+    <TextView
+        android:id="@+id/tvYourMove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+android:textSize="20sp"
+        android:text="@string/tv_yourmove"
+        app:layout_constraintEnd_toEndOf="@+id/imgYourMove"
+        app:layout_constraintStart_toStartOf="@+id/imgYourMove"
+        app:layout_constraintTop_toBottomOf="@+id/imgYourMove" />
+
+    <TextView
+        android:id="@+id/tvComputerMove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="20sp"
+
+        android:text="@string/tv_computermove"
+        app:layout_constraintEnd_toEndOf="@+id/imgComputerMove"
+        app:layout_constraintStart_toStartOf="@+id/imgComputerMove"
+        app:layout_constraintTop_toBottomOf="@+id/imgComputerMove" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_rock"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvYourMove" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPaper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_paper"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRock"
+        app:layout_constraintEnd_toStartOf="@+id/btnScissor"
+        app:layout_constraintStart_toEndOf="@+id/btnRock"
+        app:layout_constraintTop_toTopOf="@+id/btnRock" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnScissor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_scissor"
+        android:layout_marginRight="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPaper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnPaper" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toTopOf="@+id/imgYourMove"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvYourScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvComputerScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGameOver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvResult" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnScissor"
+        app:srcCompat="@android:drawable/presence_away" />
+
+  <com.google.android.material.button.MaterialButton
+      android:id="@+id/btnYes"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      style="@style/Widget.MaterialComponents.Button.TextButton"
+      android:layout_marginLeft="16dp"
+      android:layout_marginStart="16dp"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="@+id/tvGameOver"
+      app:layout_constraintStart_toEndOf="@+id/tvGameOver"
+      app:layout_constraintTop_toTopOf="@+id/tvGameOver"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
